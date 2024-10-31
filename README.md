@@ -1,6 +1,6 @@
 # Sent Python API library
 
-[![PyPI version](https://img.shields.io/pypi/v/sent.svg)](https://pypi.org/project/sent/)
+[![PyPI version](https://img.shields.io/pypi/v/sentdm.svg)](https://pypi.org/project/sentdm/)
 
 The Sent Python library provides convenient access to the Sent REST API from any Python 3.7+
 application. The library includes type definitions for all request params and response fields,
@@ -20,7 +20,7 @@ pip install git+ssh://git@github.com/stainless-sdks/sent-python.git
 ```
 
 > [!NOTE]
-> Once this package is [published to PyPI](https://app.stainlessapi.com/docs/guides/publish), this will become: `pip install --pre sent`
+> Once this package is [published to PyPI](https://app.stainlessapi.com/docs/guides/publish), this will become: `pip install --pre sentdm`
 
 ## Usage
 
