@@ -1,5 +1,5 @@
 [project]
-name = "sent"
+name = "sentdm"
 version = "0.0.1-alpha.0"
 description = "The official Python library for the Sent API"
 dynamic = ["readme"]
