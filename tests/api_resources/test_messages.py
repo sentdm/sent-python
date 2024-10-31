@@ -24,9 +24,9 @@ class TestMessages:
     @parametrize
     def test_method_create_with_all_params(self, client: Sent) -> None:
         message = client.messages.create(
-            contact_id="contactId",
-            customer_id="customerId",
-            template_id="templateId",
+            contact_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            template_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
         assert_matches_type(object, message, path=["response"])
 
@@ -58,9 +58,9 @@ class TestMessages:
     @parametrize
     def test_method_phone_number_with_all_params(self, client: Sent) -> None:
         message = client.messages.phone_number(
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             phone_number="phoneNumber",
-            template_id="templateId",
+            template_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
         assert_matches_type(object, message, path=["response"])
 
@@ -96,9 +96,9 @@ class TestAsyncMessages:
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncSent) -> None:
         message = await async_client.messages.create(
-            contact_id="contactId",
-            customer_id="customerId",
-            template_id="templateId",
+            contact_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            template_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
         assert_matches_type(object, message, path=["response"])
 
@@ -130,9 +130,9 @@ class TestAsyncMessages:
     @parametrize
     async def test_method_phone_number_with_all_params(self, async_client: AsyncSent) -> None:
         message = await async_client.messages.phone_number(
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             phone_number="phoneNumber",
-            template_id="templateId",
+            template_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
         assert_matches_type(object, message, path=["response"])
 

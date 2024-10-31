@@ -8,7 +8,7 @@ from typing import Any, cast
 import pytest
 
 from sent import Sent, AsyncSent
-from sent.types import SentDmServicesContractsDataSMSPayloadDto
+from sent.types import SMSPayload
 from tests.utils import assert_matches_type
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
@@ -23,16 +23,16 @@ class TestSMS:
             phone_number="phoneNumber",
             retrieve_if_does_not_exists=True,
         )
-        assert_matches_type(SentDmServicesContractsDataSMSPayloadDto, sms, path=["response"])
+        assert_matches_type(SMSPayload, sms, path=["response"])
 
     @parametrize
     def test_method_list_with_all_params(self, client: Sent) -> None:
         sms = client.sms.list(
             phone_number="phoneNumber",
             retrieve_if_does_not_exists=True,
-            sent_id="sentId",
+            sent_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
-        assert_matches_type(SentDmServicesContractsDataSMSPayloadDto, sms, path=["response"])
+        assert_matches_type(SMSPayload, sms, path=["response"])
 
     @parametrize
     def test_raw_response_list(self, client: Sent) -> None:
@@ -44,7 +44,7 @@ class TestSMS:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         sms = response.parse()
-        assert_matches_type(SentDmServicesContractsDataSMSPayloadDto, sms, path=["response"])
+        assert_matches_type(SMSPayload, sms, path=["response"])
 
     @parametrize
     def test_streaming_response_list(self, client: Sent) -> None:
@@ -56,7 +56,7 @@ class TestSMS:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             sms = response.parse()
-            assert_matches_type(SentDmServicesContractsDataSMSPayloadDto, sms, path=["response"])
+            assert_matches_type(SMSPayload, sms, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -70,16 +70,16 @@ class TestAsyncSMS:
             phone_number="phoneNumber",
             retrieve_if_does_not_exists=True,
         )
-        assert_matches_type(SentDmServicesContractsDataSMSPayloadDto, sms, path=["response"])
+        assert_matches_type(SMSPayload, sms, path=["response"])
 
     @parametrize
     async def test_method_list_with_all_params(self, async_client: AsyncSent) -> None:
         sms = await async_client.sms.list(
             phone_number="phoneNumber",
             retrieve_if_does_not_exists=True,
-            sent_id="sentId",
+            sent_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
-        assert_matches_type(SentDmServicesContractsDataSMSPayloadDto, sms, path=["response"])
+        assert_matches_type(SMSPayload, sms, path=["response"])
 
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncSent) -> None:
@@ -91,7 +91,7 @@ class TestAsyncSMS:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         sms = await response.parse()
-        assert_matches_type(SentDmServicesContractsDataSMSPayloadDto, sms, path=["response"])
+        assert_matches_type(SMSPayload, sms, path=["response"])
 
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncSent) -> None:
@@ -103,6 +103,6 @@ class TestAsyncSMS:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             sms = await response.parse()
-            assert_matches_type(SentDmServicesContractsDataSMSPayloadDto, sms, path=["response"])
+            assert_matches_type(SMSPayload, sms, path=["response"])
 
         assert cast(Any, response.is_closed) is True

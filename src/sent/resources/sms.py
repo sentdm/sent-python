@@ -21,7 +21,7 @@ from .._response import (
     async_to_streamed_response_wrapper,
 )
 from .._base_client import make_request_options
-from ..types.sent_dm_services_contracts_data_sms_payload_dto import SentDmServicesContractsDataSMSPayloadDto
+from ..types.sms_payload import SMSPayload
 
 __all__ = ["SMSResource", "AsyncSMSResource"]
 
@@ -58,7 +58,7 @@ class SMSResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> SentDmServicesContractsDataSMSPayloadDto:
+    ) -> SMSPayload:
         """
         Args:
           extra_headers: Send extra headers
@@ -85,7 +85,7 @@ class SMSResource(SyncAPIResource):
                     sms_list_params.SMSListParams,
                 ),
             ),
-            cast_to=SentDmServicesContractsDataSMSPayloadDto,
+            cast_to=SMSPayload,
         )
 
 
@@ -121,7 +121,7 @@ class AsyncSMSResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> SentDmServicesContractsDataSMSPayloadDto:
+    ) -> SMSPayload:
         """
         Args:
           extra_headers: Send extra headers
@@ -148,7 +148,7 @@ class AsyncSMSResource(AsyncAPIResource):
                     sms_list_params.SMSListParams,
                 ),
             ),
-            cast_to=SentDmServicesContractsDataSMSPayloadDto,
+            cast_to=SMSPayload,
         )
 
 

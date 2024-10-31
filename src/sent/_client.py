@@ -96,7 +96,7 @@ class Sent(SyncAPIClient):
         if base_url is None:
             base_url = os.environ.get("SENT_BASE_URL")
         if base_url is None:
-            base_url = f"https://api.sent.dm"
+            base_url = f"https://sent.dm"
 
         super().__init__(
             version=__version__,
@@ -274,7 +274,7 @@ class AsyncSent(AsyncAPIClient):
         if base_url is None:
             base_url = os.environ.get("SENT_BASE_URL")
         if base_url is None:
-            base_url = f"https://api.sent.dm"
+            base_url = f"https://sent.dm"
 
         super().__init__(
             version=__version__,

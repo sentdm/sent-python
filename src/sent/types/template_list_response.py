@@ -3,8 +3,8 @@
 from typing import List
 from typing_extensions import TypeAlias
 
-from .sent_dm_services_contracts_responses_template_response import SentDmServicesContractsResponsesTemplateResponse
+from .template_response import TemplateResponse
 
 __all__ = ["TemplateListResponse"]
 
-TemplateListResponse: TypeAlias = List[SentDmServicesContractsResponsesTemplateResponse]
+TemplateListResponse: TypeAlias = List[TemplateResponse]

@@ -19,7 +19,7 @@ class TestContacts:
     @parametrize
     def test_method_list(self, client: Sent) -> None:
         contact = client.contacts.list(
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             page=0,
             page_size=0,
         )
@@ -28,7 +28,7 @@ class TestContacts:
     @parametrize
     def test_raw_response_list(self, client: Sent) -> None:
         response = client.contacts.with_raw_response.list(
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             page=0,
             page_size=0,
         )
@@ -41,7 +41,7 @@ class TestContacts:
     @parametrize
     def test_streaming_response_list(self, client: Sent) -> None:
         with client.contacts.with_streaming_response.list(
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             page=0,
             page_size=0,
         ) as response:
@@ -60,7 +60,7 @@ class TestAsyncContacts:
     @parametrize
     async def test_method_list(self, async_client: AsyncSent) -> None:
         contact = await async_client.contacts.list(
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             page=0,
             page_size=0,
         )
@@ -69,7 +69,7 @@ class TestAsyncContacts:
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncSent) -> None:
         response = await async_client.contacts.with_raw_response.list(
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             page=0,
             page_size=0,
         )
@@ -82,7 +82,7 @@ class TestAsyncContacts:
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncSent) -> None:
         async with async_client.contacts.with_streaming_response.list(
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             page=0,
             page_size=0,
         ) as response:
