@@ -81,7 +81,7 @@ class Sent(SyncAPIClient):
         # part of our public interface in the future.
         _strict_response_validation: bool = False,
     ) -> None:
-        """Construct a new synchronous sent client instance.
+        """Construct a new synchronous Sent client instance.
 
         This automatically infers the `api_key` argument from the `X_API_KEY` environment variable if it is not provided.
         """
@@ -259,7 +259,7 @@ class AsyncSent(AsyncAPIClient):
         # part of our public interface in the future.
         _strict_response_validation: bool = False,
     ) -> None:
-        """Construct a new async sent client instance.
+        """Construct a new async Sent client instance.
 
         This automatically infers the `api_key` argument from the `X_API_KEY` environment variable if it is not provided.
         """
