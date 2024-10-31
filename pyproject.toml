@@ -5,7 +5,7 @@ description = "The official Python library for the sent API"
 dynamic = ["readme"]
 license = "Apache-2.0"
 authors = [
-{ name = "Sent", email = "dev-feedback@sent.com" },
+{ name = "Sent", email = "team@sent.dm" },
 ]
 dependencies = [
     "httpx>=0.23.0, <1",
