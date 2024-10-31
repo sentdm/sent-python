@@ -1,20 +1,26 @@
-# Shared Types
-
-```python
-from sent.types import SentDmServicesContractsDataContactDto
-```
-
 # Contacts
 
 Types:
 
 ```python
-from sent.types import ContactListResponse
+from sent.types import SentDmServicesContractsDataContactDto, ContactListResponse
 ```
 
 Methods:
 
-- <code title="get /contacts">client.contacts.<a href="./src/sent/resources/contacts.py">list</a>(\*\*<a href="src/sent/types/contact_list_params.py">params</a>) -> <a href="./src/sent/types/contact_list_response.py">object</a></code>
+- <code title="get /contacts">client.contacts.<a href="./src/sent/resources/contacts/contacts.py">list</a>(\*\*<a href="src/sent/types/contact_list_params.py">params</a>) -> <a href="./src/sent/types/contact_list_response.py">object</a></code>
+
+## ID
+
+Methods:
+
+- <code title="get /contacts/{customerId}/id/{id}">client.contacts.id.<a href="./src/sent/resources/contacts/id.py">retrieve</a>(id, \*, customer_id) -> <a href="./src/sent/types/sent_dm_services_contracts_data_contact_dto.py">SentDmServicesContractsDataContactDto</a></code>
+
+## Phone
+
+Methods:
+
+- <code title="get /contacts/{customerId}/phone/{phoneNumber}">client.contacts.phone.<a href="./src/sent/resources/contacts/phone.py">retrieve</a>(phone_number, \*, customer_id) -> <a href="./src/sent/types/sent_dm_services_contracts_data_contact_dto.py">SentDmServicesContractsDataContactDto</a></code>
 
 # Messages
 

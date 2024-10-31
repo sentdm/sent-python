@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-from .shared import SentDmServicesContractsDataContactDto as SentDmServicesContractsDataContactDto
 from .sms_list_params import SMSListParams as SMSListParams
 from .contact_list_params import ContactListParams as ContactListParams
 from .template_list_params import TemplateListParams as TemplateListParams
@@ -13,6 +12,9 @@ from .template_create_params import TemplateCreateParams as TemplateCreateParams
 from .template_list_response import TemplateListResponse as TemplateListResponse
 from .template_update_params import TemplateUpdateParams as TemplateUpdateParams
 from .message_phone_number_params import MessagePhoneNumberParams as MessagePhoneNumberParams
+from .sent_dm_services_contracts_data_contact_dto import (
+    SentDmServicesContractsDataContactDto as SentDmServicesContractsDataContactDto,
+)
 from .sent_dm_services_contracts_data_customer_dto import (
     SentDmServicesContractsDataCustomerDto as SentDmServicesContractsDataCustomerDto,
 )
