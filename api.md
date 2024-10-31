@@ -4,20 +4,6 @@
 from sent.types import SentDmServicesContractsDataContactDto
 ```
 
-# Contact
-
-## ID
-
-Methods:
-
-- <code title="get /contact/{customerId}/id/{id}">client.contact.id.<a href="./src/sent/resources/contact/id.py">retrieve</a>(id, \*, customer_id) -> <a href="./src/sent/types/shared/sent_dm_services_contracts_data_contact_dto.py">SentDmServicesContractsDataContactDto</a></code>
-
-## Phone
-
-Methods:
-
-- <code title="get /contact/{customerId}/phone/{phoneNumber}">client.contact.phone.<a href="./src/sent/resources/contact/phone.py">retrieve</a>(phone_number, \*, customer_id) -> <a href="./src/sent/types/shared/sent_dm_services_contracts_data_contact_dto.py">SentDmServicesContractsDataContactDto</a></code>
-
 # Contacts
 
 Types:
