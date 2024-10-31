@@ -9,8 +9,8 @@ import pytest
 
 from sent import Sent, AsyncSent
 from sent.types import (
+    TemplateResponse,
     TemplateListResponse,
-    SentDmServicesContractsResponsesTemplateResponse,
 )
 from tests.utils import assert_matches_type
 
@@ -28,7 +28,7 @@ class TestTemplates:
     @parametrize
     def test_method_create_with_all_params(self, client: Sent) -> None:
         template = client.templates.create(
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             name="name",
         )
         assert_matches_type(object, template, path=["response"])
@@ -56,34 +56,34 @@ class TestTemplates:
     @parametrize
     def test_method_retrieve(self, client: Sent) -> None:
         template = client.templates.retrieve(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
-        assert_matches_type(SentDmServicesContractsResponsesTemplateResponse, template, path=["response"])
+        assert_matches_type(TemplateResponse, template, path=["response"])
 
     @parametrize
     def test_raw_response_retrieve(self, client: Sent) -> None:
         response = client.templates.with_raw_response.retrieve(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
 
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         template = response.parse()
-        assert_matches_type(SentDmServicesContractsResponsesTemplateResponse, template, path=["response"])
+        assert_matches_type(TemplateResponse, template, path=["response"])
 
     @parametrize
     def test_streaming_response_retrieve(self, client: Sent) -> None:
         with client.templates.with_streaming_response.retrieve(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             template = response.parse()
-            assert_matches_type(SentDmServicesContractsResponsesTemplateResponse, template, path=["response"])
+            assert_matches_type(TemplateResponse, template, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -91,14 +91,14 @@ class TestTemplates:
     def test_path_params_retrieve(self, client: Sent) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `customer_id` but received ''"):
             client.templates.with_raw_response.retrieve(
-                id="id",
+                id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 customer_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
             client.templates.with_raw_response.retrieve(
                 id="",
-                customer_id="customerId",
+                customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             )
 
     @parametrize
@@ -113,7 +113,7 @@ class TestTemplates:
         template = client.templates.update(
             id="id",
             category="category",
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             name="name",
             raw_body="rawBody",
         )
@@ -153,14 +153,14 @@ class TestTemplates:
     @parametrize
     def test_method_list(self, client: Sent) -> None:
         template = client.templates.list(
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
         assert_matches_type(TemplateListResponse, template, path=["response"])
 
     @parametrize
     def test_raw_response_list(self, client: Sent) -> None:
         response = client.templates.with_raw_response.list(
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
 
         assert response.is_closed is True
@@ -171,7 +171,7 @@ class TestTemplates:
     @parametrize
     def test_streaming_response_list(self, client: Sent) -> None:
         with client.templates.with_streaming_response.list(
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -184,16 +184,16 @@ class TestTemplates:
     @parametrize
     def test_method_delete(self, client: Sent) -> None:
         template = client.templates.delete(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
         assert_matches_type(object, template, path=["response"])
 
     @parametrize
     def test_raw_response_delete(self, client: Sent) -> None:
         response = client.templates.with_raw_response.delete(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
 
         assert response.is_closed is True
@@ -204,8 +204,8 @@ class TestTemplates:
     @parametrize
     def test_streaming_response_delete(self, client: Sent) -> None:
         with client.templates.with_streaming_response.delete(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -219,14 +219,14 @@ class TestTemplates:
     def test_path_params_delete(self, client: Sent) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `customer_id` but received ''"):
             client.templates.with_raw_response.delete(
-                id="id",
+                id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 customer_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
             client.templates.with_raw_response.delete(
                 id="",
-                customer_id="customerId",
+                customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             )
 
 
@@ -241,7 +241,7 @@ class TestAsyncTemplates:
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncSent) -> None:
         template = await async_client.templates.create(
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             name="name",
         )
         assert_matches_type(object, template, path=["response"])
@@ -269,34 +269,34 @@ class TestAsyncTemplates:
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncSent) -> None:
         template = await async_client.templates.retrieve(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
-        assert_matches_type(SentDmServicesContractsResponsesTemplateResponse, template, path=["response"])
+        assert_matches_type(TemplateResponse, template, path=["response"])
 
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncSent) -> None:
         response = await async_client.templates.with_raw_response.retrieve(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
 
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         template = await response.parse()
-        assert_matches_type(SentDmServicesContractsResponsesTemplateResponse, template, path=["response"])
+        assert_matches_type(TemplateResponse, template, path=["response"])
 
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncSent) -> None:
         async with async_client.templates.with_streaming_response.retrieve(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             template = await response.parse()
-            assert_matches_type(SentDmServicesContractsResponsesTemplateResponse, template, path=["response"])
+            assert_matches_type(TemplateResponse, template, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -304,14 +304,14 @@ class TestAsyncTemplates:
     async def test_path_params_retrieve(self, async_client: AsyncSent) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `customer_id` but received ''"):
             await async_client.templates.with_raw_response.retrieve(
-                id="id",
+                id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 customer_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
             await async_client.templates.with_raw_response.retrieve(
                 id="",
-                customer_id="customerId",
+                customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             )
 
     @parametrize
@@ -326,7 +326,7 @@ class TestAsyncTemplates:
         template = await async_client.templates.update(
             id="id",
             category="category",
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             name="name",
             raw_body="rawBody",
         )
@@ -366,14 +366,14 @@ class TestAsyncTemplates:
     @parametrize
     async def test_method_list(self, async_client: AsyncSent) -> None:
         template = await async_client.templates.list(
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
         assert_matches_type(TemplateListResponse, template, path=["response"])
 
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncSent) -> None:
         response = await async_client.templates.with_raw_response.list(
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
 
         assert response.is_closed is True
@@ -384,7 +384,7 @@ class TestAsyncTemplates:
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncSent) -> None:
         async with async_client.templates.with_streaming_response.list(
-            customer_id="customerId",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -397,16 +397,16 @@ class TestAsyncTemplates:
     @parametrize
     async def test_method_delete(self, async_client: AsyncSent) -> None:
         template = await async_client.templates.delete(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
         assert_matches_type(object, template, path=["response"])
 
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncSent) -> None:
         response = await async_client.templates.with_raw_response.delete(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
 
         assert response.is_closed is True
@@ -417,8 +417,8 @@ class TestAsyncTemplates:
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncSent) -> None:
         async with async_client.templates.with_streaming_response.delete(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -432,12 +432,12 @@ class TestAsyncTemplates:
     async def test_path_params_delete(self, async_client: AsyncSent) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `customer_id` but received ''"):
             await async_client.templates.with_raw_response.delete(
-                id="id",
+                id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 customer_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
             await async_client.templates.with_raw_response.delete(
                 id="",
-                customer_id="customerId",
+                customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             )

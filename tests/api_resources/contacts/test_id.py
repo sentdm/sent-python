@@ -8,8 +8,8 @@ from typing import Any, cast
 import pytest
 
 from sent import Sent, AsyncSent
-from sent.types import SentDmServicesContractsDataContactDto
 from tests.utils import assert_matches_type
+from sent.types.shared import Contact
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 
@@ -20,34 +20,34 @@ class TestID:
     @parametrize
     def test_method_retrieve(self, client: Sent) -> None:
         id = client.contacts.id.retrieve(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
-        assert_matches_type(SentDmServicesContractsDataContactDto, id, path=["response"])
+        assert_matches_type(Contact, id, path=["response"])
 
     @parametrize
     def test_raw_response_retrieve(self, client: Sent) -> None:
         response = client.contacts.id.with_raw_response.retrieve(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
 
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         id = response.parse()
-        assert_matches_type(SentDmServicesContractsDataContactDto, id, path=["response"])
+        assert_matches_type(Contact, id, path=["response"])
 
     @parametrize
     def test_streaming_response_retrieve(self, client: Sent) -> None:
         with client.contacts.id.with_streaming_response.retrieve(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             id = response.parse()
-            assert_matches_type(SentDmServicesContractsDataContactDto, id, path=["response"])
+            assert_matches_type(Contact, id, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -55,14 +55,14 @@ class TestID:
     def test_path_params_retrieve(self, client: Sent) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `customer_id` but received ''"):
             client.contacts.id.with_raw_response.retrieve(
-                id="id",
+                id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 customer_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
             client.contacts.id.with_raw_response.retrieve(
                 id="",
-                customer_id="customerId",
+                customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             )
 
 
@@ -72,34 +72,34 @@ class TestAsyncID:
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncSent) -> None:
         id = await async_client.contacts.id.retrieve(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
-        assert_matches_type(SentDmServicesContractsDataContactDto, id, path=["response"])
+        assert_matches_type(Contact, id, path=["response"])
 
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncSent) -> None:
         response = await async_client.contacts.id.with_raw_response.retrieve(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
 
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         id = await response.parse()
-        assert_matches_type(SentDmServicesContractsDataContactDto, id, path=["response"])
+        assert_matches_type(Contact, id, path=["response"])
 
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncSent) -> None:
         async with async_client.contacts.id.with_streaming_response.retrieve(
-            id="id",
-            customer_id="customerId",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             id = await response.parse()
-            assert_matches_type(SentDmServicesContractsDataContactDto, id, path=["response"])
+            assert_matches_type(Contact, id, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -107,12 +107,12 @@ class TestAsyncID:
     async def test_path_params_retrieve(self, async_client: AsyncSent) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `customer_id` but received ''"):
             await async_client.contacts.id.with_raw_response.retrieve(
-                id="id",
+                id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 customer_id="",
             )
 
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `id` but received ''"):
             await async_client.contacts.id.with_raw_response.retrieve(
                 id="",
-                customer_id="customerId",
+                customer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             )

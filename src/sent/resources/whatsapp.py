@@ -21,7 +21,7 @@ from .._response import (
     async_to_streamed_response_wrapper,
 )
 from .._base_client import make_request_options
-from ..types.sent_dm_services_contracts_data_whatsapp_payload_dto import SentDmServicesContractsDataWhatsappPayloadDto
+from ..types.whatsapp_payload import WhatsappPayload
 
 __all__ = ["WhatsappResource", "AsyncWhatsappResource"]
 
@@ -58,7 +58,7 @@ class WhatsappResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> SentDmServicesContractsDataWhatsappPayloadDto:
+    ) -> WhatsappPayload:
         """
         Args:
           extra_headers: Send extra headers
@@ -85,7 +85,7 @@ class WhatsappResource(SyncAPIResource):
                     whatsapp_list_params.WhatsappListParams,
                 ),
             ),
-            cast_to=SentDmServicesContractsDataWhatsappPayloadDto,
+            cast_to=WhatsappPayload,
         )
 
 
@@ -121,7 +121,7 @@ class AsyncWhatsappResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> SentDmServicesContractsDataWhatsappPayloadDto:
+    ) -> WhatsappPayload:
         """
         Args:
           extra_headers: Send extra headers
@@ -148,7 +148,7 @@ class AsyncWhatsappResource(AsyncAPIResource):
                     whatsapp_list_params.WhatsappListParams,
                 ),
             ),
-            cast_to=SentDmServicesContractsDataWhatsappPayloadDto,
+            cast_to=WhatsappPayload,
         )
 
 

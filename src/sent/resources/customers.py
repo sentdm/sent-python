@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import httpx
 
-from ..types import SentDmServicesContractsDataCustomerDto, customer_update_params
+from ..types import Customer, customer_update_params
 from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
 from .._utils import (
     maybe_transform,
@@ -19,8 +19,8 @@ from .._response import (
     async_to_streamed_response_wrapper,
 )
 from .._base_client import make_request_options
-from ..types.sent_dm_services_contracts_data_customer_dto import SentDmServicesContractsDataCustomerDto
-from ..types.sent_dm_services_contracts_data_customer_dto_param import SentDmServicesContractsDataCustomerDtoParam
+from ..types.customer import Customer
+from ..types.customer_param import CustomerParam
 
 __all__ = ["CustomersResource", "AsyncCustomersResource"]
 
@@ -55,7 +55,7 @@ class CustomersResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> SentDmServicesContractsDataCustomerDto:
+    ) -> Customer:
         """
         Args:
           extra_headers: Send extra headers
@@ -73,21 +73,21 @@ class CustomersResource(SyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=SentDmServicesContractsDataCustomerDto,
+            cast_to=Customer,
         )
 
     def update(
         self,
         id: str,
         *,
-        customer: SentDmServicesContractsDataCustomerDtoParam | NotGiven = NOT_GIVEN,
+        customer: CustomerParam | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> SentDmServicesContractsDataCustomerDto:
+    ) -> Customer:
         """
         Args:
           extra_headers: Send extra headers
@@ -106,7 +106,7 @@ class CustomersResource(SyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=SentDmServicesContractsDataCustomerDto,
+            cast_to=Customer,
         )
 
     def delete(
@@ -171,7 +171,7 @@ class AsyncCustomersResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> SentDmServicesContractsDataCustomerDto:
+    ) -> Customer:
         """
         Args:
           extra_headers: Send extra headers
@@ -189,21 +189,21 @@ class AsyncCustomersResource(AsyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=SentDmServicesContractsDataCustomerDto,
+            cast_to=Customer,
         )
 
     async def update(
         self,
         id: str,
         *,
-        customer: SentDmServicesContractsDataCustomerDtoParam | NotGiven = NOT_GIVEN,
+        customer: CustomerParam | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> SentDmServicesContractsDataCustomerDto:
+    ) -> Customer:
         """
         Args:
           extra_headers: Send extra headers
@@ -222,7 +222,7 @@ class AsyncCustomersResource(AsyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=SentDmServicesContractsDataCustomerDto,
+            cast_to=Customer,
         )
 
     async def delete(

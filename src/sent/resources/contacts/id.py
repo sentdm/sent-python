@@ -14,7 +14,7 @@ from ..._response import (
     async_to_streamed_response_wrapper,
 )
 from ..._base_client import make_request_options
-from ...types.sent_dm_services_contracts_data_contact_dto import SentDmServicesContractsDataContactDto
+from ...types.shared.contact import Contact
 
 __all__ = ["IDResource", "AsyncIDResource"]
 
@@ -50,7 +50,7 @@ class IDResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> SentDmServicesContractsDataContactDto:
+    ) -> Contact:
         """
         Args:
           extra_headers: Send extra headers
@@ -66,11 +66,11 @@ class IDResource(SyncAPIResource):
         if not id:
             raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
         return self._get(
-            f"/contacts/{customer_id}/id/{id}",
+            f"/contact/{customer_id}/id/{id}",
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=SentDmServicesContractsDataContactDto,
+            cast_to=Contact,
         )
 
 
@@ -105,7 +105,7 @@ class AsyncIDResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> SentDmServicesContractsDataContactDto:
+    ) -> Contact:
         """
         Args:
           extra_headers: Send extra headers
@@ -121,11 +121,11 @@ class AsyncIDResource(AsyncAPIResource):
         if not id:
             raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
         return await self._get(
-            f"/contacts/{customer_id}/id/{id}",
+            f"/contact/{customer_id}/id/{id}",
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=SentDmServicesContractsDataContactDto,
+            cast_to=Contact,
         )
 
 

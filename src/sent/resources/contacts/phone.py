@@ -14,7 +14,7 @@ from ..._response import (
     async_to_streamed_response_wrapper,
 )
 from ..._base_client import make_request_options
-from ...types.sent_dm_services_contracts_data_contact_dto import SentDmServicesContractsDataContactDto
+from ...types.shared.contact import Contact
 
 __all__ = ["PhoneResource", "AsyncPhoneResource"]
 
@@ -50,7 +50,7 @@ class PhoneResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> SentDmServicesContractsDataContactDto:
+    ) -> Contact:
         """
         Args:
           extra_headers: Send extra headers
@@ -66,11 +66,11 @@ class PhoneResource(SyncAPIResource):
         if not phone_number:
             raise ValueError(f"Expected a non-empty value for `phone_number` but received {phone_number!r}")
         return self._get(
-            f"/contacts/{customer_id}/phone/{phone_number}",
+            f"/contact/{customer_id}/phone/{phone_number}",
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=SentDmServicesContractsDataContactDto,
+            cast_to=Contact,
         )
 
 
@@ -105,7 +105,7 @@ class AsyncPhoneResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> SentDmServicesContractsDataContactDto:
+    ) -> Contact:
         """
         Args:
           extra_headers: Send extra headers
@@ -121,11 +121,11 @@ class AsyncPhoneResource(AsyncAPIResource):
         if not phone_number:
             raise ValueError(f"Expected a non-empty value for `phone_number` but received {phone_number!r}")
         return await self._get(
-            f"/contacts/{customer_id}/phone/{phone_number}",
+            f"/contact/{customer_id}/phone/{phone_number}",
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=SentDmServicesContractsDataContactDto,
+            cast_to=Contact,
         )
 
 

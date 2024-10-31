@@ -10,7 +10,7 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 
 ## Documentation
 
-The REST API documentation can be found on [www.sent.dm](https://www.sent.dm/docs). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found on [sent.dm](https://sent.dm). The full API of this library can be found in [api.md](api.md).
 
 ## Installation
 

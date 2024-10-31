@@ -8,7 +8,7 @@ from typing import Any, cast
 import pytest
 
 from sent import Sent, AsyncSent
-from sent.types import SentDmServicesContractsDataCustomerDto
+from sent.types import Customer
 from sent._utils import parse_datetime
 from tests.utils import assert_matches_type
 
@@ -21,31 +21,31 @@ class TestCustomers:
     @parametrize
     def test_method_retrieve(self, client: Sent) -> None:
         customer = client.customers.retrieve(
-            "id",
+            "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
-        assert_matches_type(SentDmServicesContractsDataCustomerDto, customer, path=["response"])
+        assert_matches_type(Customer, customer, path=["response"])
 
     @parametrize
     def test_raw_response_retrieve(self, client: Sent) -> None:
         response = client.customers.with_raw_response.retrieve(
-            "id",
+            "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
 
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         customer = response.parse()
-        assert_matches_type(SentDmServicesContractsDataCustomerDto, customer, path=["response"])
+        assert_matches_type(Customer, customer, path=["response"])
 
     @parametrize
     def test_streaming_response_retrieve(self, client: Sent) -> None:
         with client.customers.with_streaming_response.retrieve(
-            "id",
+            "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             customer = response.parse()
-            assert_matches_type(SentDmServicesContractsDataCustomerDto, customer, path=["response"])
+            assert_matches_type(Customer, customer, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -59,16 +59,16 @@ class TestCustomers:
     @parametrize
     def test_method_update(self, client: Sent) -> None:
         customer = client.customers.update(
-            id="id",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
-        assert_matches_type(SentDmServicesContractsDataCustomerDto, customer, path=["response"])
+        assert_matches_type(Customer, customer, path=["response"])
 
     @parametrize
     def test_method_update_with_all_params(self, client: Sent) -> None:
         customer = client.customers.update(
-            id="id",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             customer={
-                "id": "id",
+                "id": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 "created_at": parse_datetime("2019-12-27T18:11:19.117Z"),
                 "name": "name",
                 "sending_phone_number": "sendingPhoneNumber",
@@ -82,29 +82,29 @@ class TestCustomers:
                 "whatsapp_system_user_access_token": "whatsappSystemUserAccessToken",
             },
         )
-        assert_matches_type(SentDmServicesContractsDataCustomerDto, customer, path=["response"])
+        assert_matches_type(Customer, customer, path=["response"])
 
     @parametrize
     def test_raw_response_update(self, client: Sent) -> None:
         response = client.customers.with_raw_response.update(
-            id="id",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
 
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         customer = response.parse()
-        assert_matches_type(SentDmServicesContractsDataCustomerDto, customer, path=["response"])
+        assert_matches_type(Customer, customer, path=["response"])
 
     @parametrize
     def test_streaming_response_update(self, client: Sent) -> None:
         with client.customers.with_streaming_response.update(
-            id="id",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             customer = response.parse()
-            assert_matches_type(SentDmServicesContractsDataCustomerDto, customer, path=["response"])
+            assert_matches_type(Customer, customer, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -118,14 +118,14 @@ class TestCustomers:
     @parametrize
     def test_method_delete(self, client: Sent) -> None:
         customer = client.customers.delete(
-            "id",
+            "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
         assert_matches_type(object, customer, path=["response"])
 
     @parametrize
     def test_raw_response_delete(self, client: Sent) -> None:
         response = client.customers.with_raw_response.delete(
-            "id",
+            "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
 
         assert response.is_closed is True
@@ -136,7 +136,7 @@ class TestCustomers:
     @parametrize
     def test_streaming_response_delete(self, client: Sent) -> None:
         with client.customers.with_streaming_response.delete(
-            "id",
+            "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -160,31 +160,31 @@ class TestAsyncCustomers:
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncSent) -> None:
         customer = await async_client.customers.retrieve(
-            "id",
+            "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
-        assert_matches_type(SentDmServicesContractsDataCustomerDto, customer, path=["response"])
+        assert_matches_type(Customer, customer, path=["response"])
 
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncSent) -> None:
         response = await async_client.customers.with_raw_response.retrieve(
-            "id",
+            "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
 
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         customer = await response.parse()
-        assert_matches_type(SentDmServicesContractsDataCustomerDto, customer, path=["response"])
+        assert_matches_type(Customer, customer, path=["response"])
 
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncSent) -> None:
         async with async_client.customers.with_streaming_response.retrieve(
-            "id",
+            "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             customer = await response.parse()
-            assert_matches_type(SentDmServicesContractsDataCustomerDto, customer, path=["response"])
+            assert_matches_type(Customer, customer, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -198,16 +198,16 @@ class TestAsyncCustomers:
     @parametrize
     async def test_method_update(self, async_client: AsyncSent) -> None:
         customer = await async_client.customers.update(
-            id="id",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
-        assert_matches_type(SentDmServicesContractsDataCustomerDto, customer, path=["response"])
+        assert_matches_type(Customer, customer, path=["response"])
 
     @parametrize
     async def test_method_update_with_all_params(self, async_client: AsyncSent) -> None:
         customer = await async_client.customers.update(
-            id="id",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             customer={
-                "id": "id",
+                "id": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 "created_at": parse_datetime("2019-12-27T18:11:19.117Z"),
                 "name": "name",
                 "sending_phone_number": "sendingPhoneNumber",
@@ -221,29 +221,29 @@ class TestAsyncCustomers:
                 "whatsapp_system_user_access_token": "whatsappSystemUserAccessToken",
             },
         )
-        assert_matches_type(SentDmServicesContractsDataCustomerDto, customer, path=["response"])
+        assert_matches_type(Customer, customer, path=["response"])
 
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncSent) -> None:
         response = await async_client.customers.with_raw_response.update(
-            id="id",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
 
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         customer = await response.parse()
-        assert_matches_type(SentDmServicesContractsDataCustomerDto, customer, path=["response"])
+        assert_matches_type(Customer, customer, path=["response"])
 
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncSent) -> None:
         async with async_client.customers.with_streaming_response.update(
-            id="id",
+            id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             customer = await response.parse()
-            assert_matches_type(SentDmServicesContractsDataCustomerDto, customer, path=["response"])
+            assert_matches_type(Customer, customer, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -257,14 +257,14 @@ class TestAsyncCustomers:
     @parametrize
     async def test_method_delete(self, async_client: AsyncSent) -> None:
         customer = await async_client.customers.delete(
-            "id",
+            "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
         assert_matches_type(object, customer, path=["response"])
 
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncSent) -> None:
         response = await async_client.customers.with_raw_response.delete(
-            "id",
+            "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         )
 
         assert response.is_closed is True
@@ -275,7 +275,7 @@ class TestAsyncCustomers:
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncSent) -> None:
         async with async_client.customers.with_streaming_response.delete(
-            "id",
+            "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
