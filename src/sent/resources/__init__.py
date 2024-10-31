@@ -8,14 +8,6 @@ from .sms import (
     SMSResourceWithStreamingResponse,
     AsyncSMSResourceWithStreamingResponse,
 )
-from .contact import (
-    ContactResource,
-    AsyncContactResource,
-    ContactResourceWithRawResponse,
-    AsyncContactResourceWithRawResponse,
-    ContactResourceWithStreamingResponse,
-    AsyncContactResourceWithStreamingResponse,
-)
 from .contacts import (
     ContactsResource,
     AsyncContactsResource,
@@ -58,12 +50,6 @@ from .templates import (
 )
 
 __all__ = [
-    "ContactResource",
-    "AsyncContactResource",
-    "ContactResourceWithRawResponse",
-    "AsyncContactResourceWithRawResponse",
-    "ContactResourceWithStreamingResponse",
-    "AsyncContactResourceWithStreamingResponse",
     "ContactsResource",
     "AsyncContactsResource",
     "ContactsResourceWithRawResponse",

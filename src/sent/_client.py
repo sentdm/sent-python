@@ -46,7 +46,6 @@ __all__ = [
 
 
 class Sent(SyncAPIClient):
-    contact: resources.ContactResource
     contacts: resources.ContactsResource
     messages: resources.MessagesResource
     sms: resources.SMSResource
@@ -97,7 +96,7 @@ class Sent(SyncAPIClient):
         if base_url is None:
             base_url = os.environ.get("SENT_BASE_URL")
         if base_url is None:
-            base_url = f"https://sent-dm-dev.azurewebsites.net"
+            base_url = f"https://sent.dm"
 
         super().__init__(
             version=__version__,
@@ -110,7 +109,6 @@ class Sent(SyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.contact = resources.ContactResource(self)
         self.contacts = resources.ContactsResource(self)
         self.messages = resources.MessagesResource(self)
         self.sms = resources.SMSResource(self)
@@ -226,7 +224,6 @@ class Sent(SyncAPIClient):
 
 
 class AsyncSent(AsyncAPIClient):
-    contact: resources.AsyncContactResource
     contacts: resources.AsyncContactsResource
     messages: resources.AsyncMessagesResource
     sms: resources.AsyncSMSResource
@@ -277,7 +274,7 @@ class AsyncSent(AsyncAPIClient):
         if base_url is None:
             base_url = os.environ.get("SENT_BASE_URL")
         if base_url is None:
-            base_url = f"https://sent-dm-dev.azurewebsites.net"
+            base_url = f"https://sent.dm"
 
         super().__init__(
             version=__version__,
@@ -290,7 +287,6 @@ class AsyncSent(AsyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.contact = resources.AsyncContactResource(self)
         self.contacts = resources.AsyncContactsResource(self)
         self.messages = resources.AsyncMessagesResource(self)
         self.sms = resources.AsyncSMSResource(self)
@@ -407,7 +403,6 @@ class AsyncSent(AsyncAPIClient):
 
 class SentWithRawResponse:
     def __init__(self, client: Sent) -> None:
-        self.contact = resources.ContactResourceWithRawResponse(client.contact)
         self.contacts = resources.ContactsResourceWithRawResponse(client.contacts)
         self.messages = resources.MessagesResourceWithRawResponse(client.messages)
         self.sms = resources.SMSResourceWithRawResponse(client.sms)
@@ -418,7 +413,6 @@ class SentWithRawResponse:
 
 class AsyncSentWithRawResponse:
     def __init__(self, client: AsyncSent) -> None:
-        self.contact = resources.AsyncContactResourceWithRawResponse(client.contact)
         self.contacts = resources.AsyncContactsResourceWithRawResponse(client.contacts)
         self.messages = resources.AsyncMessagesResourceWithRawResponse(client.messages)
         self.sms = resources.AsyncSMSResourceWithRawResponse(client.sms)
@@ -429,7 +423,6 @@ class AsyncSentWithRawResponse:
 
 class SentWithStreamedResponse:
     def __init__(self, client: Sent) -> None:
-        self.contact = resources.ContactResourceWithStreamingResponse(client.contact)
         self.contacts = resources.ContactsResourceWithStreamingResponse(client.contacts)
         self.messages = resources.MessagesResourceWithStreamingResponse(client.messages)
         self.sms = resources.SMSResourceWithStreamingResponse(client.sms)
@@ -440,7 +433,6 @@ class SentWithStreamedResponse:
 
 class AsyncSentWithStreamedResponse:
     def __init__(self, client: AsyncSent) -> None:
-        self.contact = resources.AsyncContactResourceWithStreamingResponse(client.contact)
         self.contacts = resources.AsyncContactsResourceWithStreamingResponse(client.contacts)
         self.messages = resources.AsyncMessagesResourceWithStreamingResponse(client.messages)
         self.sms = resources.AsyncSMSResourceWithStreamingResponse(client.sms)
